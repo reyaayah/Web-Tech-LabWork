@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Display Good day if hour is less than 18</p>
+    <p id="demo">Good evening</p>
+
+    <script>
+        if(new Date().getHours()<18){
+            document.getElementById("demo").innerHTML="Good Morning";
+        }
+
+        var a=2;
+        var b=4;
+        if(a>4){
+            document.write("a is Greater than 4");
+        }
+        else if(a==4){
+            document.write("a is 4");
+        }
+        else{
+            document.write("b is greater than a");
+        }
+        var day;
+
+        switch(new Date().getDay()){
+            case 0:
+                day ="Sunday";
+                break;
+            case 1:
+                day -"Monday";
+                break;
+            case 2:
+                day = "Tuesdday";
+                break;
+            case 3:
+                day="Wednesday";
+                break;
+            case 4:
+                day="Thursday";
+                break;
+            case 5:
+                day="Friday";
+                break;
+            case 6:
+                day="Saturday";
+                break;
+            
+        }
+        document.getElementById("demo").innerHTML="Today is" + day;
+
+        var txt="";
+        var member={fname: "Younjun",lname:"Choi", age:25};
+        var x;
+        for(x in member){
+            txt+= member[x]+" ";
+        }
+        document.getElementById("demo").innerHTML=txt;
+        var bts =["JK","V","Suga","Hobi"];
+        var y;
+        for(y of bts){
+            document.write(y+" ");
+        }
+    </script>
+</body>
+</html>

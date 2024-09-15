@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Styles for the slider container */
+    .slider-container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    /* Styles for the slider */
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    /* Styles for each slide */
+    .slide {
+      width: 100%;
+      flex: 0 0 auto;
+      overflow: hidden;
+    }
+
+    /* Hover effect on the slides */
+    .slide:hover {
+      transform: scale(1.1);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    /* Additional styling for images */
+    .slide img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="img1.jpg" alt="Image 1">
+    </div>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="img2.jpg" alt="Image 2">
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="img3.jpg" alt="Image 3">
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
+</div>
+
+<script>
+  // JavaScript for automatic sliding (optional)
+  let currentSlide = 0;
+  const slides = document.querySelector('.slider').children;
+  const totalSlides = slides.length;
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+    } else {
+      currentSlide = 0;
+    }
+    updateSlider();
+  }
+
+  function updateSlider() {
+    const newTransformValue = -currentSlide * 100 + '%';
+    document.querySelector('.slider').style.transform = `translateX(${newTransformValue})`;
+  }
+
+  // Uncomment the line below if you want the slider to auto-play
+  //setInterval(nextSlide, 3000); // Change 3000 to your desired interval in milliseconds
+</script>
+
+</body>
+</html>

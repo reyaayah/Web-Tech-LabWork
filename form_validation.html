@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validateForm(){
+            var x= document.forms["myForm"]["fname"].value;
+            if(x==""){
+                alert("Name cannot be empty");
+                return false;
+            }
+        }
+        function validate(){
+            var patt=/^[0-9]+$/;
+            var v =document.getElementById('elem').value;
+            if(v.match(patt)){
+                alert("valid entry");
+            }
+            else{
+                alert("Invalid entry");
+                document.getElementById('elem').value="";
+                document.getElementById('elem').focus;
+            }  
+        }
+        function validate1(){
+            var patt=/^[a-zA-Z]+$/;
+            var v =document.getElementById('elem1').value;
+            if(v.match(patt)){
+                alert("valid entry");
+            }
+            else{
+                alert("Invalid entry");
+                document.getElementById('elem1').value="";
+                document.getElementById('elem1').focus;
+            }  
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+
+        Required field: <input type="text" id="elem">
+        <input type="button" onclick="validate()" value="Check"/>
+        
+        Required field: <input type="text" id="elem1">
+        <input type="button" onclick="validate1()" value="Check"/>
+
+    </form>
+</body>
+</html>
